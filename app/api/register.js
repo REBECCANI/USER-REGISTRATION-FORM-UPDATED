@@ -4,6 +4,7 @@ export default async function handler(req, res) {
   if (req.method === 'POST') {
     const { fname, lname, email, password } = req.body;
 
+<<<<<<< HEAD
     const connection = await mysql.createConnection({
       host: 'localhost',
       user: 'root',
@@ -11,6 +12,17 @@ export default async function handler(req, res) {
       database: 'user_registration'
     });
 
+=======
+    
+    const connection = await mysql.createConnection({
+      host: 'localhost',
+      user: 'root',
+      password: 'Ruramira0306!',
+      database: 'user_registration'
+    });
+
+    
+>>>>>>> origin/main
     try {
       const [rows] = await connection.execute(
         'INSERT INTO users (fname, lname, email, password) VALUES (?, ?, ?, ?)',
@@ -26,4 +38,8 @@ export default async function handler(req, res) {
   } else {
     res.status(405).json({ message: 'Method not allowed' });
   }
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> origin/main
